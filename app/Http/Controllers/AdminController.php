@@ -13,12 +13,13 @@ class AdminController extends Controller
   }
 
 public function submit(Request $request){
+    // dd($request->all());
     $request->validate([
         'username' => 'required',
         'password' => 'required'
     ]);
     $adminLogin=Admins::where('username',$request->username)->first();
-    dd('$adminLogin');
+    dd($adminLogin);
 }
 public function logout(){
     return view('backend.admin.logout');

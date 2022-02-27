@@ -1,12 +1,12 @@
 <div class="card-body">
-    <form action="{{ route('adminLogin') }}" method="post">
+    <form action="{{ route('adminLogin.submit') }}" method="post">
             @csrf
             @method('post')
             <div class="input-group form-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                 </div>
-                <input type="text" class="form-control" placeholder="name">
+                <input type="text" class="form-control" placeholder="name" name="name">
                 @if ($errors->has('name'))
                             <p class="text-danger">{{ $errors->first('name') }}</p>
                         @endif
@@ -15,7 +15,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                 </div>
-                <input type="text" class="form-control" placeholder="email">
+                <input type="text" class="form-control" placeholder="email" name="email">
                 @if ($errors->has('email'))
                             <p class="text-danger">{{ $errors->first('email') }}</p>
                         @endif
@@ -24,7 +24,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                 </div>
-                <input type="text" class="form-control" placeholder="username">
+                <input type="text" class="form-control" placeholder="username"  name="username">
                 @if ($errors->has('username'))
                             <p class="text-danger">{{ $errors->first('username') }}</p>
                         @endif
@@ -34,7 +34,7 @@
                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                 </div>
 
-                <input type="password" class="form-control" placeholder="password">
+                <input type="password" class="form-control" placeholder="password"  name="password">
                 @if ($errors->has('password'))
                             <p class="text-danger">{{ $errors->first('password') }}</p>
                         @endif
