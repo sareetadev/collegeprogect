@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class UserhomeController extends Controller
 {
     public function userhome(){
-        return view('frontend.userhome');
+        return view('frontend.ulayouts.userhome');
     }
 }

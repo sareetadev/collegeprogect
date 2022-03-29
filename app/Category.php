@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    public function Product(){
-        return $this->hasMany(Product::class,'Category_id','id');
-    }
+    protected $gaurded = ['id'];
+  //  public function Product(){
+   //     return $this->hasMany(Product::class,'Category_id','id');
+    //}
 }
