@@ -41,6 +41,6 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect('/frontend.aulayout.home');
+        return redirect('/');
     }
    }

@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 use App\Category;
 
 class CategoryController extends Controller
 {
-  public function cato(){
-      $cats=Category::all();
-      return view('category',compact('$cats'));
+  public function index(){
+
+    $categories =Category::get();
+    //   dd('$categories');
+      return view('backend.layouts.category',compact('categories'));
 
 
   }

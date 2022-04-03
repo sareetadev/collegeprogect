@@ -30,7 +30,7 @@
                     <ul class="submenu">
                         <li><a href="{{ route('productList') }}">productList</a></li>
 
-                        <li><a href="{{ route('category') }}">Category</a></li>
+                        <li><a href="{{ route('Category.new') }}">Category</a></li>
                         <li><a href="{{ 'description' }}">Description</a></li>
                     </ul>
                 </li>
