@@ -34,7 +34,7 @@
                         <td> {{ $category->icon ?? null}}</td>
                         <td> {{ $category->description ?? null}} </td>
                         <td>
-                            <a href=" {{ route('edit_category', $category->id) }}" class="btn btn-primary">Edit</a>
+                            <a href=" {{ route('category_edit', $category->id) }}" class="btn btn-primary">Edit</a>
                             <a href="{{ route('delete_category', $category->id) }}" class="btn btn-primary">Delete</a>
                         </td>
                     @empty

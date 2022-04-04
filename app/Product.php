@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $table = 'table_product';
-protected $guarded =['Id'];
+protected $guarded =['id'];
 
    // public function Description()
     //{

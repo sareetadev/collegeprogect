@@ -73,10 +73,10 @@ route::get('/category', [CategoryController::class, 'index'])->name('Category.ne
 //     return view('backend.layouts.category');
 // })->name('category');
 route::get('/create_category', [CategoryController::class, 'create'])->name('create_category');
-route::get('/edit_category', [CategoryController::class, 'edit'])->name('edit_category');
-//route::get('/store_category', [CategoryController::class, 'store'])->name('store_category');
-route::get('/delete_category', [CategoryController::class, 'delete'])->name('delete_category');
-//route::get('/update', [CategoryController::class, 'update'])->name('update_category');
+Route::get('/category_edit/{id}',[CategoryController::class,'editcategory'])->name('category_edit');
+route::post('/store_category', [CategoryController::class, 'store'])->name('store_category');
+route::post('/delete_category/{id}', [CategoryController::class, 'delete'])->name('delete_category');
+route::post('/update_category/{id}', [CategoryController::class, 'update'])->name('update_category');
 
 
 route::get('/site', [SiteController::class, 'site'])->name('site');
