@@ -11,8 +11,8 @@ class SiteController extends Controller
     public function site()
     {
         $settings = Site::find(1);
-        return view('site_setting', compact('settings'));
-        return view('backend.layouts.site');
+        return view('backend.layouts.site_setting', compact('settings'));
+
     }
     public function updateSetting(Request $request)
 
@@ -53,7 +53,7 @@ class SiteController extends Controller
             'logo' => $request->$logo_url,
 
         ];
-        DB::table('site_settings')->truncate();
+        DB::table('site_setting')->truncate();
         Site::insert('$data');
         // \App\Helper::updateSite();
         return redirect()->back();

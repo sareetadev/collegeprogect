@@ -40,8 +40,7 @@
         <div class="dropdown">
             <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                 <span class="user-icon" >
-                    <img src="vendors/images/photo1.jpg" alt="" border-re>
-                </span>
+                     </span>
                 <span class="user-name">Ross C. Lopez</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">

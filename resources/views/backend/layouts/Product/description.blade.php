@@ -1,16 +1,27 @@
 @extends('backend.layouts.master')
 @section('content')
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+            <center>
+                <h2>Description Details</h2>
+            </center>
+        </h6>
+    </div>
+    <br>
+    <a href="{{route('des_create')}}" style="position: absolute; right: 0;" class="btn btn-dark">+Add New
+        Item</a>
+    <br><div class="container">
+	<div class="d-flex justify-content-center h-60">
 
-<h2>Descriptions</h2>
-<table class="table table-bordered">
+    <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">PrductId</th>
-        <th scope="col">productName</th>
-        <th scope="col">Decription</th>
+        <th scope="col">ID</th>
+        <th scope="col">Prduct_id</th>
+        <th scope="col">ProductName</th>
+        <th scope="col">Decriptions</th>
 
-        <th scope="col">image</th>
 
 
       </tr>
@@ -22,16 +33,15 @@
             @foreach ($descriptions as $description )
             <tr>
                 <th>{{$loop->iteration}}</th>
-                <td>{{$product->productId ?? ''}}</td>
-                <td>{{$product->ProductName ?? ''}}</td>
+                <td>{{$product->product_id ?? ''}}</td>
+                <td>{{$product->productName ?? ''}}</td>
                 <td>{{$product->descriptions ?? ''}}</td>
-                     <img src="{{ $product->image??'' }}" height="100px" width="100">
-                </td>
+
                 <td>{{$description->Action ?? ''}}</td>
 
                 <td>
-                    <a href="{{ route('product_edit', $product->id) }}" class="btn btn-primary">Edit</a>
-                  <a href="{{ route('product_delete', $product->id)}}"class="btn btn-primary">Delete</a>
+                    <a href="{{ ''}}" class="btn btn-primary">Edit</a>
+                  <a href="{{ ''}}"class="btn btn-primary">Delete</a>
 
                 </td>
 
@@ -43,4 +53,5 @@
 
     </tbody>
   </table>
+    </div>
 @endsection

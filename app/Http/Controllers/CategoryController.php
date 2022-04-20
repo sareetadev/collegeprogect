@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 //use Illuminate\Http\Request;
 use App\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+//use Illuminate\Support\Facades\DB;
 use Exception;
 
 class CategoryController extends Controller
@@ -20,11 +20,9 @@ class CategoryController extends Controller
   }
   public function editcategory($id)
   {
-
-
-  $categories= Category::where('id',$id)->first();
-  return view('backend.layouts.Product.editCategory', compact('categories'));
-  }
+    $data['category'] = Category::where('id',$id)->first();
+    return view('backend.layouts.Product.editCategory', $data);
+}
       public function delete($id)
       {
   //        dd(" This product is deleted sucessfully");
@@ -41,25 +39,28 @@ class CategoryController extends Controller
           $request->validate([
               'id' => 'required',
               'name' => 'required',
-              'icon' => 'required',
+
               'description' => 'required',
 
           ]);
 
       try {
               $data= [
-                  'id' => $request->get('productId'),
-                  'name' => $request->get('productName'),
-                  'icon' => $request->get('category'),
-                  'description' => $request->get('Brand'),
+                  'id' => $request->get('id'),
+                  'name' => $request->get('name'),
+                  'icon' => $request->get('icon'),
+                  'description' => $request->get('description'),
 
               ];
 
-             Category::create($data);
+             $test = Category::create($data);
+
               return redirect()->route('Category.new');
           } catch (Exception $exception) {
-              // dd($exception);
+              //dd($exception);
           }
 
+
       }
+
 }

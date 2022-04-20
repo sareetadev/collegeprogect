@@ -14,18 +14,21 @@
 
                 <li class="dropdown">
 
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-house-1"></span><span class="mtext">site seting</span>
-                    </a>
+                    <li>
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-diagram"></span><span class="mtext" >siteseting</span>
+                        </a>
+
+
                     <ul class="submenu">
-                        <li><a href="{{ route('site') }}">siteseting</a></li>
+                        <li><a href="{{ route('site_setting') }}">siteseting</a></li>
 
                     </ul>
                 </li>
                 <li class="dropdown">
 
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-house-1"></span><span class="mtext">Products</span>
+                        <span class="micon fa fa-cubes"></span><span class="mtext" >Product</span>
                     </a>
                     <ul class="submenu">
                         <li><a href="{{ route('productList') }}">productList</a></li>
@@ -33,6 +36,26 @@
                         <li><a href="{{ route('Category.new') }}">Category</a></li>
                         <li><a href="{{ 'description' }}">Description</a></li>
                     </ul>
+                </li>
+                <li class="dropdown">
+
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon fa fa-cubes"></span><span class="mtext" >Booking</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="">booking</a></li>
+
+                          </ul>
+                </li>
+                <li class="dropdown">
+
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon fa fa-cubes"></span><span class="mtext" >Brand</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="">Brand details</a></li>
+
+                           </ul>
                 </li>
                 <li class="dropdown">
 
@@ -68,72 +91,13 @@
                         <li><a href="datatable.html">DataTables</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="calendar.html" class="dropdown-toggle no-arrow">
-
-                        <span class="micon dw dw-calendar1"></span><span class="mtext">Calendar</span>
-                    </a>
-                </li>
-
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-paint-brush"></span><span class="mtext">Icons</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="font-awesome.html">FontAwesome Icons</a></li>
-                        <li><a href="foundation.html">Foundation Icons</a></li>
-                        <li><a href="ionicons.html">Ionicons Icons</a></li>
-                        <li><a href="themify.html">Themify Icons</a></li>
-                        <li><a href="custom-icon.html">Custom Icons</a></li>
-                    </ul>
-                </li>
 
 
 
 
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-list3"></span><span class="mtext">Multi Level Menu</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li class="dropdown">
-                            <a href="javascript:;" class="dropdown-toggle">
-                                <span class="micon fa fa-plug"></span><span class="mtext">Level 2</span>
-                            </a>
-                            <ul class="submenu child">
-                                <li><a href="javascript:;">Level 2</a></li>
-                                <li><a href="javascript:;">Level 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="sitemap.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-diagram"></span><span class="mtext">Sitemap</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="chat.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-chat3"></span><span class="mtext">Chat</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="invoice.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-invoice"></span><span class="mtext">Invoice</span>
-                    </a>
-                </li>
-                <li>
-                    <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                    <div class="sidebar-small-cap">Extra</div>
-                </li>
+
+
+
 
 
                 <a href="https://dropways.github.io/deskapp-free-single-page-website-template/" target="_blank"

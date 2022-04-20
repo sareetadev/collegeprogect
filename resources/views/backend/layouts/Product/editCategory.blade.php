@@ -14,6 +14,7 @@
     {{--        {{ dd($settings) }}--}}
     <form method="post" enctype="multipart/form-data" action="{{route('update_category', ['Request' =>$category->id])}}">
         @csrf
+        
         <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" name="name" value="{{ $category ? $category->name :'' }}">

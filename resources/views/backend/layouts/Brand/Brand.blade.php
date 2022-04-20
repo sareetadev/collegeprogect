@@ -4,12 +4,12 @@
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">
                 <center>
-                    <h2> Categories Details</h2>
+                    <h2> Brand Details</h2>
                 </center>
             </h6>
         </div>
         <br>
-        <a href="{{route('create_category')}}" style="position: absolute; right: 0;" class="btn btn-dark">+Add New
+        <a href="{{route('')}}" style="position: absolute; right: 0;" class="btn btn-dark">+Add New
             Item</a>
         <br>
         <div class="card-body">
@@ -18,9 +18,9 @@
 
                     <thead>
                         <tr>
-                            <th scope="col">id</th>
+                            <th scope="col">BrandId</th>
                             <th scope="col">name</th>
-                             <th scope="col">icon</th>
+                             <th scope="col">Logo</th>
                              <th scope="col">description</th>
 
                             <th scope="col">Action</th>
@@ -36,8 +36,8 @@
                         </td>
                        <td> {{ $category->description ?? null}} </td>
                         <td>
-                            <a href="{{ route('category_edit', $category->id) }}" class="btn btn-primary">Edit</a>
-                            <a href="{{ route('delete_category', $category->id) }}" class="btn btn-primary">Delete</a>
+                            <a href="{{ route('', $category->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route(', $category->id) }}" class="btn btn-primary">Delete</a>
                         </td>
                     @empty
                     <tr>

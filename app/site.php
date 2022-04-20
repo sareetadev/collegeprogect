@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Site extends Model
 {
-    protected $table = 'site_settings';
+    protected $table = 'sitesetting';
     protected $guarded =['id'];
 
 }

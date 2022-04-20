@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 //use App\Category;
+
+use App\Category;
 use App\Product;
 use Exception;
 use Illuminate\Http\Request;
@@ -12,9 +14,13 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $data['products'] = Product::all();
+        $data['categories'] = Category::all();
        // dd($products);
-        return view('backend.layouts.productList', compact('products'));
+       //$products=Product::get();
+       $products = Product::latest()->paginate(20);
+
+        return view('backend.layouts.productList',$data);
     }
 
 
@@ -31,6 +37,8 @@ class ProductController extends Controller
 if(!$id){
     return false;
 }
+$data['categories'] = Category::all();
+
 $data['product'] = Product::where('id',$id)->first();
 return view('backend.layouts.Product.editproduct', $data);
 }
@@ -43,10 +51,15 @@ return view('backend.layouts.Product.editproduct', $data);
 
     public function create()
     {
-        return view('backend.layouts.Product.product');
+        $data['products'] = Product::all();
+        $data['categories'] = Category::all();
+        return view('backend.layouts.Product.product',$data);
+        //dd('dfdf');
     }
-    public function update(Request $request, $id)
+
+    public function productstore(Request $request)
     {
+
         $request->validate([
             'productId' => 'required',
             'productName' => 'required',
@@ -54,6 +67,58 @@ return view('backend.layouts.Product.editproduct', $data);
             'Brand' => 'required',
             'price' => 'required',
             'rentingPrice' => 'required',
+            'purchasedAt' => 'required',
+            'image' => 'required',
+
+
+        ]);
+
+        $image_url='';
+        if($request->hasfile('image')){
+            $file = $request->file('image');
+            $new_name = str_random(5).time().$file->getClientOriginalName();
+            $upload_path =public_path('/uploads');
+            $file->move($upload_path, $new_name);
+            $image_url = asset('uploads/' .$new_name);
+        }
+        //dd('dfjdjfg');
+
+    try {
+
+            $data= [
+                'productId' => $request->get('productId'),
+                'productName' => $request->get('productName'),
+                'category' => $request->get('category'),
+                'Brand' => $request->get('Brand'),
+                'Price' => $request->get('Price'),
+                'rentingPrice' => $request->get('rentingPrice'),
+                'purchasedAt'=> $request->get('purchasedAt'),
+                'image' =>$image_url ?? '' ,
+
+            ];
+
+
+            Product::create($data);
+
+            return redirect()->route('productList');
+        } catch (Exception $exception) {
+           dd($exception);
+        }
+
+    }
+
+
+    public function update(Request $request, $id)
+    {
+    //    dd($request->all());
+        $request->validate([
+            'productId' => 'required',
+            'productName' => 'required',
+            'category' => 'required',
+            'Brand' => 'required',
+            'price' => 'required',
+            'rentingPrice' => 'required',
+            'purchasedAt' => 'required',
             'image' => 'required',
 
         ]);
@@ -71,15 +136,16 @@ return view('backend.layouts.Product.editproduct', $data);
                 'productName' => $request->get('productName'),
                 'category' => $request->get('category'),
                 'Brand' => $request->get('Brand'),
-                'price' => $request->get('price'),
+                'Price' => $request->get('Price'),
                 'rentingPrice' => $request->get('rentingPrice'),
+                'purchasedAT'=> $request->get('purchasedAt'),
                 'imag' =>$image_url ?? '' ,
 
             ];
 
        Product::where('id', $id)->update($data);
 
-       return redirect()->route('Product');
+       return redirect()->route('productList');
         } catch (Exception $exception) {
             // dd($exception);
         }
@@ -87,51 +153,7 @@ return view('backend.layouts.Product.editproduct', $data);
 }
 
 
-    public function productstore(Request $request)
-    {
-        $request->validate([
-            'productId' => 'required',
-            'productName' => 'required',
-            'category' => 'required',
-            'Brand' => 'required',
-            'price' => 'required',
-            'rentingPrice' => 'required',
-            'image' => 'required',
 
-        ]);
-        $image_url='';
-        if($request->hasfile('image')){
-            $file = $request->file('image');
-            $new_name = str_random(5).time().$file->getClientOriginalName();
-            $upload_path =public_path('/uploads');
-            $file->move($upload_path, $new_name);
-            $image_url = asset('uploads/' .$new_name);
-        }
-    try {
-            $data= [
-                'productId' => $request->get('productId'),
-                'productName' => $request->get('productName'),
-                'category' => $request->get('category'),
-                'Brand' => $request->get('Brand'),
-                'price' => $request->get('price'),
-                'rentingPrice' => $request->get('rentingPrice'),
-                'imag' =>$image_url ?? '' ,
-
-            ];
-
-            Product::create($data);
-            return redirect()->route('product');
-        } catch (Exception $exception) {
-            // dd($exception);
-        }
-
-    }
-    public function createProduct( )
-    {
-        $data['products'] = Product::all();
-        return view('backend.layouts.Product.product', $data);
-
-    }
 
 
 }

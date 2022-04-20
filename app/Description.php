@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Description extends Model
 {
-    protected $gaurded = ['id'];
+
+    protected $table = 'descriptions';
+    protected $fillable = ['productName','description'];
+
 
 }

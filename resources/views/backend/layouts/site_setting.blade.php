@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 @section('content')
-<form method="post" enctype="multipart/form-data" action="{{ route('update.setting') }}">
+<form method="post" enctype="multipart/form-data" action="{{ route('update_site')}}">
     @csrf
     <div class="form-group">
         <label for="exampleInputEmail1">System name</label>
@@ -51,4 +51,5 @@
 
     <button type="submit" class="btn btn-primary">Update</button>
 </form>
+
 @endsection

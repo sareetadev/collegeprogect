@@ -44,6 +44,7 @@
  @include('frontend.aulayout.headers') <!-- ======= Hero Section ======= -->
 @include('frontend.aulayout.heros')
  <!-- End Hero -->
+@include('frontend.aulayout.products')
 
   @yield('demo')
   <!-- ======= Footer ======= -->

@@ -11,8 +11,12 @@
         </div>
     @endif
     {{--        {{ dd($settings) }}--}}
-    <form method="post" enctype="multipart/form-data" action="{{route('product_store')}}">
+    <form method="POST" enctype="multipart/form-data" action="{{route('product_store')}}">
         @csrf
+        <div class="form-group">
+            <label for="exampleInputEmail1">productId</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" name="productId">
+        </div>
         <div class="form-group">
             <label for="exampleInputEmail1">productName</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" name="productName">
