@@ -32,19 +32,19 @@ class ProductController extends Controller
 
     // }
     public function edit($id)
-{
+ {
 
-if(!$id){
+ if(!$id){
     return false;
-}
-$data['categories'] = Category::all();
+ }
+ $data['categories'] = Category::all();
 
-$data['product'] = Product::where('id',$id)->first();
-return view('backend.layouts.Product.editproduct', $data);
-}
+ $data['product'] = Product::where('id',$id)->first();
+ return view('backend.layouts.Product.editproduct', $data);
+ }
     public function delete($id)
     {
-//        dd(" This product is deleted sucessfully");
+ //        dd(" This product is deleted sucessfully");
         Product::destroy($id);
         return redirect()->back();
     }
@@ -83,7 +83,7 @@ return view('backend.layouts.Product.editproduct', $data);
         }
         //dd('dfjdjfg');
 
-    try {
+     try {
 
             $data= [
                 'productId' => $request->get('productId'),
@@ -105,12 +105,12 @@ return view('backend.layouts.Product.editproduct', $data);
            dd($exception);
         }
 
-    }
+     }
 
 
-    public function update(Request $request, $id)
-    {
-    //    dd($request->all());
+      public function update(Request $request, $id)
+        {
+     //    dd($request->all());
         $request->validate([
             'productId' => 'required',
             'productName' => 'required',
@@ -130,7 +130,7 @@ return view('backend.layouts.Product.editproduct', $data);
             $file->move($upload_path, $new_name);
             $image_url = asset('uploads/' .$new_name);
         }
-    try {
+     try {
             $data= [
                 'productId' => $request->get('productId'),
                 'productName' => $request->get('productName'),
@@ -143,15 +143,26 @@ return view('backend.layouts.Product.editproduct', $data);
 
             ];
 
-       Product::where('id', $id)->update($data);
+         Product::where('id', $id)->update($data);
 
-       return redirect()->route('productList');
-        } catch (Exception $exception) {
+         return redirect()->route('productList');
+         } catch (Exception $exception) {
             // dd($exception);
         }
 
-}
+    }
 
+    public function Booking(Request $request, $id)
+    {
+        if (!$request->id){
+            return redirect()->back();
+        }
+        $data['product'] = Product::find($request->id);
+        if($data['product']){
+            return view('frontend.aulayout.booking', $data);
+        }
+       return redirect()->back();
+    }
 
 
 

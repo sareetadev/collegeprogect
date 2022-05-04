@@ -9,7 +9,8 @@ class ProductinfoController extends Controller
 {
     public function index()
     {
-        return view('frontend.aulayout.productDetails');
+        $table_products = Product::all();
+        return view('frontend.aulayout.productDetails', compact('table_products'));
     }
     //
 

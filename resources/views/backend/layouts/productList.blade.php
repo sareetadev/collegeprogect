@@ -3,19 +3,20 @@
 @section('content')
 <div class="card shadow mb-4">
     <div class="card-header py-3">
+        <a href="{{route('product_create')}}" style="position: absolute; right: 0;" class="btn btn-dark">+Add New
+            Item</a>
+
         <h6 class="m-0 font-weight-bold text-primary">
             <center>
                 <h2>Products Details</h2>
             </center>
         </h6>
     </div>
-    <br>
-    <a href="{{route('product_create')}}" style="position: absolute; right: 0;" class="btn btn-dark">+Add New
-        Item</a>
-    <br><div class="container">
-	<div class="d-flex justify-content-center h-60">
 
-            <table class="table">
+     <div class="card-body">
+         <div class="table-responsive">
+
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
                 <thead class="thead-dark">
                     <tr>
@@ -33,12 +34,11 @@
                   </thead>
 
                 <tbody>
-                    @if ($products)
                     @foreach ($products as $product )
                     <tr>
                         <th>{{$loop->iteration}}</th>
                         <td>{{$product->ProductName ?? ''}}</td>
-                        <td>{{$product->Category ?? ''}}</td>
+                        <td>{{$product->category ?? ''}}</td>
                         <td>{{$product->Brand ?? ''}}</td>
                         <td>{{$product->Price ?? ''}}</td>
                         <td>{{$product->rentingPrice ?? ''}}</td>
@@ -57,11 +57,12 @@
 
                     @endforeach
 
-                    @endif
+
 
                 </tbody>
               </table>
-
+         </div>
+        </div>
 
 		</div>
 	</div>

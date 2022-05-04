@@ -26,7 +26,8 @@
             <select class="form-control" name="category" id="category">
                 <option value="">--Select--</option>
                 @forelse ($categories as $category)
-                <option value="{{ $category ? $category->id :''}}"> {{ $category ? $category->name :''}} </option>
+                <option value="{{ $category ? $category->id :''}}"> {{ $category ? $category->name :''}}</option>
+
 
                 @empty
                <option> --no categories </option>
@@ -53,7 +54,7 @@
         </div>
 
         <div>
-            <label for="formFileLg" class="form-label">Large file input example</label>
+            <label for="formFileLg" class="form-label">Image</label>
             <input class="form-control form-control-lg" id="formFileLg" type="file" name="image">
         </div>
 

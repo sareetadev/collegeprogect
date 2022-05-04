@@ -14,10 +14,10 @@
     <form method="post" enctype="multipart/form-data" action="{{route('des_store')}}">
         @csrf
 
-        {{-- <div class="form-group">
+        <div class="form-group">
             <label for="exampleInputEmail1">Product_id</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" name="product_id">
-        </div> --}}
+        </div>
 
 
         <div class="form-group">

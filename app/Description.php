@@ -8,7 +8,8 @@ class Description extends Model
 {
 
     protected $table = 'descriptions';
-    protected $fillable = ['productName','description'];
+    protected $gaurded =['id','product_id'];
+
 
 
 }

@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">productName</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" name="productName"  value="{{$product ? $product->productName : ''}}">
+            <input type="text" class="form-control" aria-describedby="emailHelp" name="productName"  value="{{$product ? $product->ProductName : ''}}">
 
         </div>
         <div class="form-group">
@@ -45,7 +45,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">price</label>
-            <input type="text" class="form-control" name="price" value="{{ $product ? $product->price : ''}}">
+            <input type="text" class="form-control" name="price" value="{{ $product ? $product->Price : ''}}">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">rentingPrice</label>

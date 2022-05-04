@@ -9,60 +9,42 @@
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
-<body>
+<body background="color:black">
     <div class="wrapper">
         <h2>
 customer Details</h2>
-<form method="POST">
-            <h4>
-Account</h4>
+<form method="POST" action="{{route('Booking_store')}}">
+    @csrf
+<h4>Account</h4>
 <div class="input-group">
                 <div class="input-box">
-                    <input type="text" placeholder="Full Name" required class="name">
+                    <input type="text" placeholder="User Name" required class="name" name="user_name" value="{{ \Illuminate\Support\Facades\Auth::check() ?  \Illuminate\Support\Facades\Auth::user()->name : '' }}">
                     <i class="fa fa-user icon"></i>
                 </div>
 <div class="input-box">
-                    <input type="text" placeholder="Nick Name" required class="name">
-                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Mobile No." required class="name" name="mobile" value="986639575" >
+                    <i class="fa fa-mobile icon"></i>
                 </div>
 </div>
 
 <div class="input-group">
                 <div class="input-box">
-                    <input type="email" placeholder="Email Adress" required class="name">
+                    <input type="email" placeholder="Email Adress" required class="name" name="email">
                     <i class="fa fa-envelope icon"></i>
                 </div>
 </div>
-<div class="input-group">
-    <div class="input-box">
-        <h4>
-            Rented At</h4>
-        <input type="date" placeholder="Rented At" required  name="RentedAt" class="rentedAt">
-        <i class="fa fa-calendar"></i>
-    </div>
-<div class="input-box">
-    <h4>
-        Return At</h4>
-        <input type="date" placeholder="Return At" name="ReturnAt" required class="returnAt">
-        <i class="fa fa-calendar"></i>
-    </div>
-</div>
 
+
+<h4>Rented Date  &nbsp;&nbsp;   &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;   ReturAt </h4>
 <div class="input-group">
                 <div class="input-box">
-                    <h4>
-Date of Birth</h4>
-<input type="text" placeholder="DD" class="dob">
-                    <input type="text" placeholder="MM" class="dob">
-                    <input type="text" placeholder="YYYY" class="dob">
+                    <input type="date"  required class="name" name="rented_date">
+
                 </div>
+
 <div class="input-box">
-                    <h4>
-Gender</h4>
-<input type="radio" id="b1" name="gendar" checked class="radio">
-                    <label for="b1">Male</label>
-                    <input type="radio" id="b2" name="gendar" class="radio">
-                    <label for="b2">Female</label>
+                    <input type="date"  required class="name" name="return_date">
+
                 </div>
 </div>
 
@@ -71,35 +53,45 @@ Gender</h4>
                     <h4>
 Payment Details</h4>
 <input type="radio" name="pay" id="bc1" checked class="radio">
-                    <label for="bc1"><span><i class="fa fa-cc-visa"></i> Credit Card</span></label>
-                    <input type="radio" name="pay" id="bc2" class="radio">
-                    <label for="bc2"><span><i class="fa fa-cc-paypal"></i> Paypal</span></label>
-                </div>
+                    <label for="bc1"><span><i class="fa fa-cc-visa" class="name"></i> Credit Card</span></label>
+                       </div>
 </div>
 <div class="input-group">
                 <div class="input-box">
-                    <input type="tel" placeholder="Card Number" required class="name">
+                    <input type="tel" placeholder="Card Number" required class="name" name="card_no." >
                     <i class="fa fa-credit-card icon"></i>
                 </div>
 </div>
 <div class="input-group">
                 <div class="input-box">
-                    <input type="tel" placeholder="Card CVC" required class="name">
+                    <input type="tel" placeholder="Card CVC" required class="name" name="card_cvc">
                     <i class="fa fa-user icon"></i>
                 </div>
 <div class="input-box">
-                    <select>
-                        <option>01 jun</option>
-                        <option>02 jun</option>
-                        <option>03 jun</option>
-                    </select>
-                    <select>
-                        <option>2020</option>
-                        <option>2021</option>
-                        <option>2022</option>
-                    </select>
+
+                        <input type="date" placeholder="paying date" required class="name" name="paid_date">
+
                 </div>
 </div>
+
+<h4>Product </h4>
+<div class="input-group">
+                <div class="input-box">
+                    <input type="text" placeholder="Product Name" required  class="name"name="product_name" value="{{ $table_product->product_name }}">
+
+                </div>
+<div class="input-box">
+                    <input type="text" placeholder=" Price" required class="name"   name="price"  value="{{ $table_product->price }}">
+
+
+                </div>
+</div>
+<h4>Booking NO. </h4>
+<div class="input-group">
+                <div class="input-box">
+                    <input type="number" placeholder="booking " required  class="name"name="Booking_no" value="{{ $Booking_no }}">
+
+                </div>
 <div class="input-group">
                 <div class="input-box">
                     <button type="submit">PAY NOW</button>

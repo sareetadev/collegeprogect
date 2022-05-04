@@ -3,7 +3,7 @@
 
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
-          <h1>Easy to use different products with Online Renting service<span>.</span></h1>
+          <h2>Easy to use different products with Online Renting service<span>.</span></h2>
 
         </div>
       </div>

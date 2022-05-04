@@ -20,23 +20,23 @@ class DescriptionController extends Controller
       public function des_store(Request $request)
       {
           $request->validate([
+              'id' => 'required',
               'product_id' => 'required',
               'productName' => 'required',
-
-              'descriptions' => 'required',
+               'descriptions' => 'required',
 
           ]);
 //dd('hjh');
       try {
               $data= [
-
+       'id' => $request->get('id'),
                   'product_id' => $request->get('product_id'),
                   'productName' => $request->get('productName'),
                    'descriptions' => $request->get('descriptions'),
 
               ];
 
-             $test = Description::create($data);
+              Description::create($data);
 
               return redirect()->route('description');
           } catch (Exception $exception) {

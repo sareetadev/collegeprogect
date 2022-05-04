@@ -17,7 +17,7 @@
     <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">id</th>
         <th scope="col">Prduct_id</th>
         <th scope="col">ProductName</th>
         <th scope="col">Decriptions</th>
@@ -33,9 +33,9 @@
             @foreach ($descriptions as $description )
             <tr>
                 <th>{{$loop->iteration}}</th>
-                <td>{{$product->product_id ?? ''}}</td>
-                <td>{{$product->productName ?? ''}}</td>
-                <td>{{$product->descriptions ?? ''}}</td>
+                <td>{{$description->product_id ?? ''}}</td>
+                <td>{{$description->productName ?? ''}}</td>
+                <td>{{$description->descriptions ?? ''}}</td>
 
                 <td>{{$description->Action ?? ''}}</td>
 

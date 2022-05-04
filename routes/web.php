@@ -55,7 +55,7 @@ route::get('/adminLogin_logout', [AdminController::class, 'logout'])->name('admi
 Auth::routes();
 Route::get('/logout', 'LoginController@logout')->name('logout');
 Route::get('/', function () {
-    $data['products']=Product::with('category')->paginate(30);
+    $data['products']=Product::with('category',)->paginate(30);
     return view('frontend.aulayout.home',$data);
 });
 Route::get('/home', 'HomeController@index')->name('home');
@@ -93,7 +93,10 @@ route::post('/des_store', [DescriptionController::class, 'des_store'])->name('de
 
 //booking
 route::get('/productDetails', [ProductinfoController::class, 'index'])->name('productDetails');
-route::get('/Booking', [BookingController::class, 'index'])->name('Booking');
+route::get('/Booking/{id}', [BookingController::class, 'Booking'])->name('Booking');
+route::post('/Booking_store/{id}', [BookingController::class, 'store'])->name('Booking_store');
+
 
 // route::get('/rent/{id}', [ProductinfoController::class, 'rentproduct'])->name('product.rent')->middleware('auth');
+
 

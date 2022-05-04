@@ -13,5 +13,10 @@ protected $fillable =['productName','category','Brand','price','rentingPrice','p
 public function category()
 {
        return $this->hasOne(Product::class,'id','id');
-    }
+
+
+}
+
+
+
 }
