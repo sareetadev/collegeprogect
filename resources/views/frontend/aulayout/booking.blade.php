@@ -13,7 +13,7 @@
     <div class="wrapper">
         <h2>
 customer Details</h2>
-<form method="POST" action="{{route('Booking_store')}}">
+<form method="POST" action="{{route('Booking_store',$id)}}">
     @csrf
 <h4>Account</h4>
 <div class="input-group">
@@ -29,7 +29,7 @@ customer Details</h2>
 
 <div class="input-group">
                 <div class="input-box">
-                    <input type="email" placeholder="Email Adress" required class="name" name="email">
+                    <input type="email" placeholder="Email Adress" required class="name" name="email" value="">
                     <i class="fa fa-envelope icon"></i>
                 </div>
 </div>
@@ -43,45 +43,25 @@ customer Details</h2>
                 </div>
 
 <div class="input-box">
-                    <input type="date"  required class="name" name="return_date">
+                    <input type="date"  required class="name" name="rented_date" value="">
 
                 </div>
 </div>
 
 <div class="input-group">
-                <div class="input-box">
+                <div class="input-box" class="name" name="return_date" value="">
                     <h4>
-Payment Details</h4>
-<input type="radio" name="pay" id="bc1" checked class="radio">
-                    <label for="bc1"><span><i class="fa fa-cc-visa" class="name"></i> Credit Card</span></label>
-                       </div>
-</div>
-<div class="input-group">
-                <div class="input-box">
-                    <input type="tel" placeholder="Card Number" required class="name" name="card_no." >
-                    <i class="fa fa-credit-card icon"></i>
-                </div>
-</div>
-<div class="input-group">
-                <div class="input-box">
-                    <input type="tel" placeholder="Card CVC" required class="name" name="card_cvc">
-                    <i class="fa fa-user icon"></i>
-                </div>
-<div class="input-box">
 
-                        <input type="date" placeholder="paying date" required class="name" name="paid_date">
-
-                </div>
 </div>
-
+</div>
 <h4>Product </h4>
 <div class="input-group">
                 <div class="input-box">
-                    <input type="text" placeholder="Product Name" required  class="name"name="product_name" value="{{ $table_product->product_name }}">
+                    <input type="text" placeholder="Product Name" required  class="name" name="product_name" value="" >
 
                 </div>
 <div class="input-box">
-                    <input type="text" placeholder=" Price" required class="name"   name="price"  value="{{ $table_product->price }}">
+                    <input type="text" placeholder=" Price" required class="name"   name="price" value="">
 
 
                 </div>
@@ -89,12 +69,12 @@ Payment Details</h4>
 <h4>Booking NO. </h4>
 <div class="input-group">
                 <div class="input-box">
-                    <input type="number" placeholder="booking " required  class="name"name="Booking_no" value="{{ $Booking_no }}">
+                    <input type="number" placeholder="booking " required  class="name"name="booking_no"  value="">
 
                 </div>
 <div class="input-group">
                 <div class="input-box">
-                    <button type="submit">PAY NOW</button>
+                    <a  href="{{route('pay')}}"> <button type="submit">PAY NOW </button></a>
                 </div>
 </div>
 </form>

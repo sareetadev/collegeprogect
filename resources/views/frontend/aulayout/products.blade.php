@@ -1,31 +1,33 @@
 <div class="topPicks">
     <div class="container" id="topPicksContainer">
         <div class="headings">
-            <h2 id="categoryheading">latest Products</h2>
-            <hr>
+             <h2 id="categoryheading">latest Products</h2>
+             <hr>
 
-        </div>
-@forelse ($products as $product)
-<div class="card" style="width: 18rem;">
-    <img src="{{ $product ? $product->image :'' }}" alt="Mountains" style="width:100%">
+
+               @forelse ($products as $product)
+                <div class="card" style="width: 18rem;  ">
+                   <img src="{{ $product ? $product->image :'' }}"  style="width:100%">
 
                         <h4 class="card-title">{{ $product->productName ?? '' }}</h4>
                         <p class="card-text">{{ $product->descriptions ? $product->descriptions->descriptions :'' }}</p>
                         <a href="{{route('productDetails')}}" class="btn btn-primary product" data-id="{{ $product->id }}">View Details</a>
-                </div>
-  </div>
-@empty
 
-@endforelse
+               </div>
+             @empty
 
-
-
-
-
-
+             
+             @endforelse
 
      </div>
-  </div>
+
+
+
+
+    </div>
+
+
+
 </div>
 <style>
     * {
@@ -33,22 +35,25 @@
     }
     /* Create three equal columns that floats next to each other */
     .column {
-        float: left;
+
+float: left;
         width: 33.33%;
         display: none; /* Hide all elements by default */
     }
      /*The "show" class is added to the filtered elements */
-    .show {
-        display: block;
+
+    .card {
+        display: inline-block;
     }
-    .content{
-        background-color: powderblue;
+    .card{
+        background-color: rgb(253, 253, 169);
+
         /*height: 300%;*/
         padding: 40px 250px 0 100px;
         margin-top: 20px;
         width: 150%;
         box-shadow: 0 5px 8px 0 rgba(3, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        text-align: center;
+        text-align:below;
         min-height: 300px;
     }
 </style>

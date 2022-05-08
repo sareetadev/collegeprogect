@@ -104,7 +104,7 @@
                         <div class="col-lg-12 mt-3">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <a href="{{route('Booking')}}" class="btn btn-success w-100">Book Now</a>
+                                    <a href="{{route('Booking',$table_product->id)}}" class="btn btn-success w-100">Book Now</a>
                                 </div>
                             </div>
                         </div>

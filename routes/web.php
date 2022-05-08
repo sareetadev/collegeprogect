@@ -4,11 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserhomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DescriptionController;
+use App\Http\Controllers\PayController;
 use App\Http\Controllers\ProductinfoController;
 use App\Http\Controllers\SiteController;
 use App\Product;
@@ -27,9 +29,9 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     //Route::get('/', function () {
-    return view('welcome',$data);
+    //return view('welcome',$data);
     //$data['products']=Product::with('category')->paginate(30);
-    // return view('frontend.aulayout.home',$data);
+     //return view('frontend.aulayout.home',$data);
 
 });
 
@@ -93,10 +95,10 @@ route::post('/des_store', [DescriptionController::class, 'des_store'])->name('de
 
 //booking
 route::get('/productDetails', [ProductinfoController::class, 'index'])->name('productDetails');
-route::get('/Booking/{id}', [BookingController::class, 'Booking'])->name('Booking');
-route::post('/Booking_store/{id}', [BookingController::class, 'store'])->name('Booking_store');
+route::get('/Booking/{id}', [BookController::class, 'Booking'])->name('Booking');
 
+route::post('/Booking_store/{id}', [BookController::class, 'store'])->name('Booking_store');
+route::get('/pay',[BookController::class, 'pay'])->name('pay');
 
-// route::get('/rent/{id}', [ProductinfoController::class, 'rentproduct'])->name('product.rent')->middleware('auth');
 
 

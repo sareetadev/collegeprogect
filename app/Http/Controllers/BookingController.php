@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Booking;
+use App\Book;
 use Illuminate\Http\Request;
  use App\Http\Controllers\Exception;
 
@@ -12,15 +12,16 @@ class BookingController extends Controller
         return view('frontend.aulayout.booking');
     }
 
-  public function store(Request $request)
+  public function store(Request $request, $id)
 {
+
+    // dd($request->all()); n
     $request->validate([
         'phone' => 'required',
         'email' => 'required',
     ]);
-    dd($request->all());
-    $payment_data = [
 
+    $payment_data = [
         'user_name' => $request->get('user_name'),
         'email' => $request->get('email'),
         'mobile' => 986639575,
@@ -34,7 +35,7 @@ class BookingController extends Controller
         'order_no' => $request->get('booking_no'),
         'price' => $request->get('price'),
     ];
-    $status = Booking::create($payment_data);
+    $status = Book::create($payment_data);
   //  if ($status) {
     //    try {
 //            dd( env('TWILLIO_SID'), env('TWILLIO_TOKEN'));
