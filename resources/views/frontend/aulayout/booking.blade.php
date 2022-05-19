@@ -16,6 +16,7 @@ customer Details</h2>
 <form method="POST" action="{{route('Booking_store',$id)}}">
     @csrf
 <h4>Account</h4>
+{{-- @foreach ($table_products as $table_product ) --}}
 <div class="input-group">
                 <div class="input-box">
                     <input type="text" placeholder="User Name" required class="name" name="user_name" value="{{ \Illuminate\Support\Facades\Auth::check() ?  \Illuminate\Support\Facades\Auth::user()->name : '' }}">
@@ -57,11 +58,11 @@ customer Details</h2>
 <h4>Product </h4>
 <div class="input-group">
                 <div class="input-box">
-                    <input type="text" placeholder="Product Name" required  class="name" name="product_name" value="" >
+                    <input type="text" placeholder=""  required  class="name" name="price" value"" >
 
                 </div>
 <div class="input-box">
-                    <input type="text" placeholder=" Price" required class="name"   name="price" value="">
+                   <span name="product" class="text-secondary"><input type="text" placeholder=" Rentin Price" required class="name"   name="price" value=" ">
 
 
                 </div>
@@ -74,9 +75,10 @@ customer Details</h2>
                 </div>
 <div class="input-group">
                 <div class="input-box">
-                    <a  href="{{route('pay')}}"> <button type="submit">PAY NOW </button></a>
+                    <button class="button " onclick="myFunction()">pay</button>
                 </div>
 </div>
+{{-- @endforeach --}}
 </form>
 </div>
 </body>
@@ -237,4 +239,8 @@ button:hover{
     background: #FFAA33;
 }</style>
 </html>
-
+<script>
+    function myFunction() {
+      alert("are sure for booking!");
+    }
+    </script>

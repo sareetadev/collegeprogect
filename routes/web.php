@@ -1,5 +1,6 @@
 <?php
 
+use App\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\LoginController;
@@ -58,6 +59,7 @@ Auth::routes();
 Route::get('/logout', 'LoginController@logout')->name('logout');
 Route::get('/', function () {
     $data['products']=Product::with('category',)->paginate(30);
+    $data['categories'] = Category::all();
     return view('frontend.aulayout.home',$data);
 });
 Route::get('/home', 'HomeController@index')->name('home');
@@ -81,6 +83,7 @@ Route::get('/category_edit/{id}',[CategoryController::class,'editcategory'])->na
 route::post('/store_category', [CategoryController::class, 'store'])->name('store_category');
 route::get('/delete_category/{id}', [CategoryController::class, 'delete'])->name('delete_category');
 route::post('/update_category/{id}', [CategoryController::class, 'update'])->name('update_category');
+route::get('/fashion', [CategoryController::class, 'view'])->name('fashion_view');
 
 
 route::get('/site_setting', [SiteController::class, 'site'])->name('site_setting');

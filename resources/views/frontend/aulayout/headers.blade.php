@@ -34,6 +34,7 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
 
         </nav><!-- .navbar -->
+
         @guest
             <a href="{{ route('login') }}" class="get-started-btn scrollto">Login Now</a>
 

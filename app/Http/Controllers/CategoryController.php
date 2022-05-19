@@ -62,5 +62,9 @@ class CategoryController extends Controller
 
 
       }
+      public function view()
+      {
+          return view('frontend.aulayout.fashion');
+      }
 
 }
