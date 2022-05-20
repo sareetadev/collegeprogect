@@ -128,6 +128,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 32px;
   margin: 0;
   padding: 0;
+  left: -10px; top: 0;
   line-height: 1;
   font-weight: 700;
   letter-spacing: 2px;
@@ -140,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffc451;
 }
 #header .logo img {
-  max-height: 40px;
+  max-height: 55px;
 }
 
 /*--------------------------------------------------------------
@@ -171,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -261,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -355,7 +356,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url("../img/oooo.jpg") top center;
   background-size: cover;
   position: relative;
 }
