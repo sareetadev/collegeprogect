@@ -24,7 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $products = Product::all();
         return view('frontend.aulayout.home',compact('products'));
+=======
+        return view('frontend.aulayout.home');
+
     }
 }

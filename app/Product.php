@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+
     protected $table = 'table_product';
 protected $fillable =['productName','category','Brand','price','rentingPrice','purchasedAT','image'];
 
@@ -18,5 +19,13 @@ public function category()
 }
 
 
+
+
+protected $guarded =['Id'];
+
+   // public function Description()
+    //{
+   //     return $this->hashOne(App\Description::class,'Product_id','id');
+    //}
 
 }

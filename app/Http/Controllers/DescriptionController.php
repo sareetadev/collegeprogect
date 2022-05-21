@@ -6,6 +6,7 @@ use App\Description;
 use Illuminate\Http\Request;
 class DescriptionController extends Controller
 {
+
    public function index(){
        $data['products'] = Product::all();
 
@@ -45,6 +46,11 @@ class DescriptionController extends Controller
 
 
       }
+
+
+   public function description(){
+       return view('backend.layouts.Product.description');
+   }
 
 }
 

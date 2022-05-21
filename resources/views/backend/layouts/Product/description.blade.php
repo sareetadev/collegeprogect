@@ -1,5 +1,6 @@
 @extends('backend.layouts.master')
 @section('content')
+
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">
@@ -24,9 +25,20 @@
 
 
 
+
+<h2>HTML Table</h2>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">PrductId</th>
+        <th scope="col">Decription</th>
+
+
       </tr>
     </thead>
     <tbody>
+
 
 
             @if ($descriptions)
@@ -54,4 +66,19 @@
     </tbody>
   </table>
     </div>
+
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+         </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+          </tr>
+
+    </tbody>
+  </table>
+
 @endsection

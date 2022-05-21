@@ -11,11 +11,16 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserhomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DescriptionController;
+
 use App\Http\Controllers\PayController;
 use App\Http\Controllers\ProductinfoController;
 use App\Http\Controllers\SiteController;
 use App\Product;
 use Illuminate\Support\Facades\Auth;
+=======
+use App\Http\Controllers\SiteController;
+use App\Product;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,15 +35,21 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     //Route::get('/', function () {
+
     //return view('welcome',$data);
     //$data['products']=Product::with('category')->paginate(30);
      //return view('frontend.aulayout.home',$data);
+=======
+       //
+        return view('frontend.aulayout.home');
+
 
 });
 
 //home
 route::get('/home', [homeController::class, 'home'])->name('home');
 //adminLogin
+
 route::get('/adminRegister', [AdminController::class, 'Rgtr'])->name('adminRegister');
 route::post('/adminRegister_smt', [AdminController::class, 'smt'])->name('adminRegister_smt');
 route::get('/adminmaster', [AdminController::class, 'adminmaster'])->name('adminmaster');
@@ -46,6 +57,15 @@ route::get('/adminmaster', [AdminController::class, 'adminmaster'])->name('admin
 route::get('/adminLogin', [AdminController::class, 'adminLogin'])->name('adminLogin');
 route::post('adminLogin_submit', [AdminController::class, 'submit'])->name('adminLogin.submit');
 route::get('/adminLogin_logout', [AdminController::class, 'logout'])->name('adminLogin.logout');
+=======
+route::get('/adminRegister',[AdminController::class,'Rgtr'])->name('adminRegister');
+route::post('/adminRegister_smt',[AdminController::class,'smt'])->name('adminRegister_smt');
+route::get('/adminmaster',[AdminController::class,'adminmaster'])->name('adminmaster');
+
+route::get('/adminLogin',[AdminController::class,'adminLogin'])->name('adminLogin');
+route::post('adminLogin_submit',[AdminController::class,'submit'])->name('adminLogin.submit');
+route::get('/adminLogin_logout',[AdminController::class,'logout'])->name('adminLogin.logout');
+
 
 
 
@@ -57,6 +77,7 @@ route::get('/adminLogin_logout', [AdminController::class, 'logout'])->name('admi
 //});*/
 Auth::routes();
 Route::get('/logout', 'LoginController@logout')->name('logout');
+
 Route::get('/', function () {
     $data['products']=Product::with('category',)->paginate(30);
     $data['categories'] = Category::all();
@@ -104,4 +125,25 @@ route::post('/Booking_store/{id}', [BookController::class, 'store'])->name('Book
 route::get('/pay',[BookController::class, 'pay'])->name('pay');
 
 
+
+=======
+Route::get('/', function () { return view('home'); })->middleware('auth');
+Route::get('/home', 'HomeController@index')->name('home');
+route::get('/userhome',[UserhomeController::class,'userhome'])->name('userhome');
+//joins
+
+route::get('/Product',[ProductController::class,'Product'])->name('Product');
+route::get('/Category',[ProductController::class,'Category'])->name('Category');
+Route::get('/productList',[ProductController::class,'index'])->name('productList');
+Route::get('/category',function(){
+    return view('backend.layouts.category');
+    })->name('category');
+    route::get('/create',[ProductController::class,'create'])->name('create');
+    Route::get('/edit-product/{id}', 'product@edit');
+
+
+    route::get('/site',[SiteController::class,'site'])->name('site');
+    route::post('/update_site',[SiteController::class,'updateSite'])->name('update.site');
+    route::get('/description',[DescriptionController::class,'description'])->name('description');
+    //route::post('/update_site',[SiteController::class,'updateSite'])->name('update.site');
 

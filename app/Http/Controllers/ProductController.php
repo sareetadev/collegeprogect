@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+
     public function index()
     {
         $data['products'] = Product::all();
@@ -19,9 +20,33 @@ class ProductController extends Controller
        // dd($products);
        //$products=Product::get();
        $products = Product::latest()->paginate(20);
+    public function index(){
+       $products=Product::all();
+    //   return view('backend.layouts.productList',compact('products'));
+      return view('backend.layouts.productList');
+
+    }
+
+public function productlist()
+    {
+        //$products=Product::with('description')->get();
+       // dd($products);
+return view ('backend.productList');
+    //}
+ //   public function Category()
+   // {
+       // $C
+       // Category=Category::with('Products')->first();
+        //dd($Category);
+
+    }
+    public function create(){
+        return view('backend.layouts.Product.product');
+
 
         return view('backend.layouts.productList',$data);
     }
+
 
 
     //   public function Category()
@@ -165,6 +190,29 @@ class ProductController extends Controller
     }
 
 
+
+
+    public function submit(Request $request)
+    {
+        $products_data=[
+           'ProductName' => $request->get('ProductName'),
+           'ProductName' => $request->get('Category'),
+           'ProductName' => $request->get('Brand'),
+           'ProductName' => $request->get('Price'),
+           'ProductName' => $request->get('RentingPrice'),
+           'ProductName' => $request->get('PurchasedAt'),
+
+        ];
+        Product::create($products_data);
+        return redirect()->route('productList');
+    }
+    public function edit($id){
+    if($id)
+    {
+        return false;
+    }
+    $product=Product::where ('id',$id)->First();
+}
 
 
 }

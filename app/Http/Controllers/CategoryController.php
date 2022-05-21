@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //use Illuminate\Http\Request;
 use App\Category;
 use Illuminate\Http\Request;
+
 //use Illuminate\Support\Facades\DB;
 use Exception;
 
@@ -66,5 +67,16 @@ class CategoryController extends Controller
       {
           return view('frontend.aulayout.fashion');
       }
+
+use App\Category;
+
+class CategoryController extends Controller
+{
+  public function cato(){
+      $cats=Category::all();
+      return view('category',compact('$cats'));
+
+
+  }
 
 }
