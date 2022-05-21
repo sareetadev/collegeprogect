@@ -7,6 +7,27 @@
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
+
+        <div class="container" data-aos="fade-up">
+
+          <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+              <img src="assets/img/" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+              <h3>This is an online Renting service based web application to provides customer different products on rent </h3>
+
+              <ul>
+                <li><i class="ri-check-double-line"></i>we provice best service through online renting services.</li>
+                <li><i class="ri-check-double-line"></i> we firstly focus on customer demanded product for rent ,efficient way get this.</li>
+                <li><i class="ri-check-double-line"></i> This is the first web application which gona be think about saving finance and using desired items by sufficient way.</ul>
+
+            </div>
+          </div>
+
+        </div>
+      </section><!-- End About Section -->
+=======
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -34,6 +55,7 @@
       </div>
     </section><!-- End About Section -->
 
+
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
       <div class="container" data-aos="zoom-in">
@@ -53,6 +75,50 @@
         </div>
 
       </div>
+
+    </section>
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+
+          <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+              <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+              <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+              <p class="fst-italic">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua.
+              </p>
+              <ul>
+                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              </ul>
+              <p>
+                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section><!-- End About Section -->
+
+    <!-- End Clients Section -->
+
+    <!-- ======= Features Section ======= -->
+
+
+    <!-- ======= Cta Section ======= -->
+
+    <!-- ======= Portfolio Section ======= -->
+
+
+    <!-- ======= Testimonials Section ======= -->
+
+    <!-- ======= Team Section ======= -->
+
     </section><!-- End Clients Section -->
 
     <!-- ======= Features Section ======= -->
@@ -535,6 +601,7 @@
       </div>
     </section><!-- End Team Section -->
 
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
@@ -555,19 +622,31 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
+
+                <p>Birgunj ,parsa, Nepal</p>
+=======
                 <p>A108 Adam Street, New York, NY 535022</p>
+
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
+
+                <p>Onlinerenting@gmail.com</p>
+=======
                 <p>info@example.com</p>
+
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
+
+                <p>+9779803850394</p>
+=======
                 <p>+1 5589 55488 55s</p>
+
               </div>
 
             </div>

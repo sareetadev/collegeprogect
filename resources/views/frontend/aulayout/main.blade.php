@@ -25,6 +25,10 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <link href="assets/css/pay.css" rel="stylesheet">
+=======
+
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -44,6 +48,10 @@
  @include('frontend.aulayout.headers') <!-- ======= Hero Section ======= -->
 @include('frontend.aulayout.heros')
  <!-- End Hero -->
+
+@include('frontend.aulayout.products')
+=======
+
 
   @yield('demo')
   <!-- ======= Footer ======= -->
